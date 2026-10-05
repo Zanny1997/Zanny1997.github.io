@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Nizzan Gerolao, a remote customer support and e-commerce support specialist.">
+<title>Nizzan Gerolao | Customer Support Portfolio</title>
+<style>
+:root{
+  color-scheme: light dark;
+  --bg: light-dark(#f6f7f9,#0e1116);
+  --surface: light-dark(#ffffff,#171b22);
+  --surface-2: light-dark(#f0f2f5,#20252e);
+  --text: light-dark(#15181d,#f2f4f7);
+  --muted: light-dark(#626a75,#aab2bf);
+  --line: light-dark(#dfe3e8,#303641);
+  --accent: light-dark(#173f8a,#79a7ff);
+  --accent-soft: light-dark(#e9f0ff,#1d3155);
+  --max: 1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+button,a{font:inherit}
+a{color:inherit}
+#app{min-height:100vh;background-color:var(--bg);border-radius:0}
+.container{width:min(calc(100% - 40px),var(--max));margin:auto}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{height:66px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:800;letter-spacing:-.02em;text-decoration:none}
+.nav-links{display:flex;gap:24px;font-size:.9rem;color:var(--muted)}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--text)}
+.hero{padding:92px 0 70px;display:grid;grid-template-columns:1.35fr .65fr;gap:60px;align-items:center}
+.kicker{font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:800;margin:0 0 16px}
+h1{font-size:clamp(2.8rem,7vw,5.6rem);line-height:.98;letter-spacing:-.065em;margin:0 0 24px;max-width:780px}
+.hero p{font-size:1.12rem;color:var(--muted);max-width:680px;margin:0 0 28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:9px;border:1px solid var(--line);text-decoration:none;font-weight:700;font-size:.92rem}
+.btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.btn.secondary{background:var(--surface);color:var(--text)}
+.hero-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 16px 40px color-mix(in srgb,#000 8%,transparent)}
+.avatar{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font-weight:900;font-size:1.3rem;margin-bottom:20px}
+.hero-card h2{font-size:1.1rem;margin:0 0 6px}.hero-card p{font-size:.92rem;margin:0 0 18px}.facts{display:grid;gap:11px;border-top:1px solid var(--line);padding-top:18px}.fact{display:flex;justify-content:space-between;gap:18px;font-size:.88rem}.fact span:first-child{color:var(--muted)}
+section{padding:70px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:30px}.section-head h2{font-size:2rem;letter-spacing:-.04em;margin:0}.section-head p{color:var(--muted);max-width:600px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}.card h3{margin:0 0 8px;font-size:1.02rem}.card p{margin:0;color:var(--muted);font-size:.92rem}.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.tag{background:var(--surface-2);border:1px solid var(--line);padding:5px 9px;border-radius:999px;font-size:.76rem;color:var(--muted)}
+.experience{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:24px 0;border-top:1px solid var(--line)}.experience:first-child{border-top:0;padding-top:0}.date{font-size:.84rem;color:var(--muted)}.role{font-weight:800;font-size:1.12rem}.company{color:var(--accent);font-weight:700;margin:2px 0 10px}.experience ul{margin:12px 0 0;padding-left:20px;color:var(--muted)}.experience li{margin:5px 0}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.metric{padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:14px}.metric strong{font-size:2rem;letter-spacing:-.04em;display:block}.metric span{color:var(--muted);font-size:.86rem}
+.cta{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:34px;display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{margin:0 0 8px;font-size:1.8rem}.cta p{margin:0;color:var(--muted)}
+footer{padding:32px 0 48px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:20px}.footer-links{display:flex;gap:18px}.footer-links a{text-decoration:none}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:65px}.grid{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:1fr}.experience{grid-template-columns:1fr;gap:5px}.nav-links{display:none}.cta{display:block}.cta .btn{margin-top:18px}}
+@media(max-width:520px){.container{width:min(calc(100% - 28px),var(--max))}.grid{grid-template-columns:1fr}.hero{padding-bottom:50px}h1{font-size:3rem}.section-head{display:block}.section-head p{margin-top:10px}footer{display:block}.footer-links{margin-top:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="app">
+<nav aria-label="Primary navigation"><div class="container nav-inner">
+<a class="brand" href="#top">Nizzan Gerolao</a>
+<div class="nav-links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
+</div></nav>
+<main id="top">
+<header class="container hero">
+<div>
+<p class="kicker">Customer Support · E-commerce · Remote</p>
+<h1>Customer support that keeps people and sales moving.</h1>
+<p>I’m Nizzan Gerolao, a remote customer support specialist with experience across chat, SMS, email, phone support, Shopify stores, CRM platforms, order management, retention, and cart recovery.</p>
+<div class="actions"><a class="btn primary" href="#contact">Let’s work together</a><a class="btn secondary" href="https://www.linkedin.com/in/nizzangerolao/" target="_blank" rel="noopener">LinkedIn</a></div>
+</div>
+<aside class="hero-card" aria-label="Profile summary"><div class="avatar">NG</div><h2>Nizzan Gerolao</h2><p>Remote Customer Support Specialist</p><div class="facts"><div class="fact"><span>Based in</span><strong>Philippines</strong></div><div class="fact"><span>Focus</span><strong>Chat · SMS · Email</strong></div><div class="fact"><span>Platforms</span><strong>Intercom · Salesforce · Shopify</strong></div></div></aside>
+</header>
+<section id="about"><div class="container"><div class="section-head"><h2>About</h2><p>Practical, customer-first support with a strong focus on clear communication, accurate account handling, and solving issues without unnecessary back-and-forth.</p></div><div class="grid"><article class="card"><h3>Customer Support</h3><p>Handled customer questions, account concerns, orders, payments, refunds, escalations, complaints, and follow-ups across chat, phone, SMS, and email.</p></article><article class="card"><h3>E-commerce Support</h3><p>Supported Shopify and other online stores with product questions, order support, abandoned-cart follow-up, retention, and customer experience.</p></article><article class="card"><h3>Back-office Support</h3><p>Comfortable with CRM updates, ticket documentation, tagging, data entry, account research, and coordinating issues that require escalation.</p></article></div></div></section>
+<section id="skills"><div class="container"><div class="section-head"><h2>Core skills</h2><p>A straightforward toolkit built around customer communication and reliable day-to-day operations.</p></div><div class="grid"><article class="card"><h3>Support channels</h3><div class="tag-list"><span class="tag">Chat Support</span><span class="tag">SMS Support</span><span class="tag">Email Support</span><span class="tag">Phone Support</span><span class="tag">Live Chat</span></div></article><article class="card"><h3>Customer operations</h3><div class="tag-list"><span class="tag">Customer Retention</span><span class="tag">Cart Recovery</span><span class="tag">Order Management</span><span class="tag">Billing & Payments</span><span class="tag">Escalations</span><span class="tag">Data Entry</span></div></article><article class="card"><h3>Tools & platforms</h3><div class="tag-list"><span class="tag">Intercom</span><span class="tag">Salesforce</span><span class="tag">Shopify</span><span class="tag">Freshdesk</span><span class="tag">Zendesk</span><span class="tag">HubSpot</span><span class="tag">Etsy</span><span class="tag">BigCommerce</span><span class="tag">Zoho</span></div></article></div></div></section>
+<section><div class="container"><div class="section-head"><h2>Highlights</h2><p>Selected strengths from my customer support and e-commerce work.</p></div><div class="metrics"><div class="metric"><strong>100–300</strong><span>Tickets handled per day in high-volume support environments</span></div><div class="metric"><strong>~30%</strong><span>Cart recovery achieved weekly for a supported store at peak performance</span></div><div class="metric"><strong>3+ yrs</strong><span>Customer service experience across chat, phone, email, and e-commerce</span></div></div></div></section>
+<section id="experience"><div class="container"><div class="section-head"><h2>Experience</h2><p>Selected professional experience relevant to remote customer support and e-commerce roles.</p></div>
+<div class="experience"><div class="date">Oct 2025 – Aug 2026</div><div><div class="role">Cart Recovery Support Specialist</div><div class="company">CartConvert</div><ul><li>Supported customers through chat and SMS for Shopify stores.</li><li>Followed up with abandoned carts and helped recover potential sales.</li><li>Answered product and order questions while handling customer concerns.</li><li>Worked with store-specific offers, checkout questions, and customer experience workflows.</li></ul></div></div>
+<div class="experience"><div class="date">Nov 2024 – Feb 2026</div><div><div class="role">Chat Support Representative</div><div class="company">Beehive Adaptive Global Solutions</div><ul><li>Provided chat support for debt-consolidation customers and account questions.</li><li>Handled payments, fees, program details, balances, ledgers, negotiation, and compliance-related questions.</li><li>Used Intercom, Salesforce, and internal tools while maintaining accurate customer records.</li><li>Supported new hires and contributed as a strong-performing team member.</li></ul></div></div>
+<div class="experience"><div class="date">Dec 2022 – Sep 2024</div><div><div class="role">Customer Service Representative / Account Representative</div><div class="company">InteLogix · Kroger Family of Stores</div><ul><li>Handled Tier 2 customer support through chat, phone, and email.</li><li>Resolved order issues, refunds, compensation, account access, loyalty, promotions, and escalations.</li><li>Built around two years of hands-on Salesforce experience.</li></ul></div></div>
+<div class="experience"><div class="date">May 2022 – Nov 2022</div><div><div class="role">Customer Service Representative</div><div class="company">Harte Hanks · Sonic Drive-In</div><ul><li>Provided customer support and issue resolution in a fast-paced service environment.</li></ul></div></div>
+</div></section>
+<section><div class="container"><div class="section-head"><h2>How I work</h2><p>Simple principles I bring to every support role.</p></div><div class="grid"><article class="card"><h3>Listen first</h3><p>I make sure I understand what the customer actually needs before jumping to a solution.</p></article><article class="card"><h3>Keep it clear</h3><p>I use simple, professional language and avoid unnecessary back-and-forth.</p></article><article class="card"><h3>Own the outcome</h3><p>I document accurately, follow through, and escalate when an issue needs another team.</p></article></div></div></section>
+<section id="contact"><div class="container"><div class="cta"><div><h2>Need a reliable remote support specialist?</h2><p>I'm open to customer support, e-commerce, retention, Shopify support, and remote VA opportunities.</p></div><a class="btn primary" href="mailto:zngerolao@gmail.com">Email me</a></div></div></section>
+</main>
+<footer class="container"><span>© 2026 Nizzan Gerolao. Built as a lightweight static portfolio.</span><div class="footer-links"><a href="https://www.linkedin.com/in/nizzangerolao/" target="_blank" rel="noopener">LinkedIn</a><a href="#top">Back to top</a></div></footer>
+</div>
+</body>
+</html>
